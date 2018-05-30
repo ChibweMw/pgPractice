@@ -21,7 +21,7 @@ let myQuery = function () {
     let rowCount = 1;
     console.log(`Found ${result.rows.length} person(s) by the name '${tableSearch}'`);
     result.rows.forEach(function (person) {
-      console.log(`- ${rowCount++}: ${person.first_name} ${person.last_name}, born '${person.birthdate}'`)
+      console.log(`- ${rowCount++}: ${person.first_name} ${person.last_name}, born '${person.birthdate.getFullYear()}-0${person.birthdate.getMonth() + 1}-${person.birthdate.getDate()}'`)
     })
     client.end();
   });
